@@ -5,11 +5,8 @@ const config = {
   navBar: {
     // website logo, displayed on the top left
     logo: {
-      // the logo url. "/logo.jpg" means in folder "public", file "logo.jpg"
-      url: '/logo.jpg',
-
-      // description of the logo. This is useful when the a reader fails to load the logo, this text will be displayed instead.
-      alt: 'Wilson Le',
+      // the logo as text
+      text: 'Wilson Le',
     },
 
     // navigation bar buttons, displayed in top right
@@ -98,7 +95,7 @@ const config = {
     // blog banner
     banner: {
       // banner image url
-      imageURL: '/images/blogs/banner.jpeg',
+      imageURL: '/images/blogs/banner.jpg',
 
       // banner image description
       imageAlt: 'temporary implementation',
@@ -111,12 +108,13 @@ const config = {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
   },
+
   // projects page
   projects: {
     // blog banner
     banner: {
       // banner image url
-      imageURL: '/images/blogs/banner.jpeg',
+      imageURL: '/images/projects/banner.jpg',
 
       // banner image description
       imageAlt: 'temporary implementation',
@@ -130,22 +128,61 @@ const config = {
     },
     cards: [
       {
-        href: 'https://github.com/WilsonLe',
-        title: '1',
+        title: 'Digital Year Book Of Class 17-20',
+        href: 'https://github.com/WilsonLe/win-of-1720',
+        description:
+          'Window 7 themed digital yearbook of Tran Dai Nghia students, class of 2020, are proud of. Developed using ReactJS, hosted on Vercel.',
+        thumbnailURL: '/images/projects/win-of-1720.jpg',
+        thumbnailAlt:
+          'thumbnail of the Digital Year Book Of Class 17-20 project',
         order: '1',
-        description: 'string',
-        thumbnailURL: '/string',
-        thumbnailAlt: 'string',
       },
       {
-        href: 'string',
-        title: '2',
+        title: 'Vanila JS To Do Application',
+        href: 'https://github.com/WilsonLe/js-todo-app',
+        description:
+          'A simple To Do Application that persists data across sessions. Built using vanila Javascript, hosted on Netlify.',
+        thumbnailURL: '/images/projects/todo.jpg',
+        thumbnailAlt: 'thumbnail of the To Do Application project',
         order: '2',
-        description: 'string',
-        thumbnailURL: '/string',
-        thumbnailAlt: 'string',
       },
-    ] as ProjectCard[],
+      {
+        title: 'ReactJS Music Player',
+        href: 'https://github.com/WilsonLe/react-music-player',
+        description:
+          'A clean, minimalistic, responsive music player web application, with customizable music library. Developed using ReactJS, hosted on Vercel.',
+        thumbnailURL: '/images/projects/music-player.jpg',
+        thumbnailAlt: 'thumbnail of the ReactJS Music Player project',
+        order: '3',
+      },
+      {
+        title: 'Denison Laundry Status API',
+        href: 'https://github.com/WilsonLe/Denison-Washroom-Status',
+        description:
+          'API for checking status of washers and dryers of Denison University residential halls. Developed using NodeJS, Docker, deployed on Digital Ocean.',
+        thumbnailURL: '/images/projects/laundry-status.jpg',
+        thumbnailAlt: 'Thumbnail of Denison Laundry Status API project',
+        order: '4',
+      },
+      {
+        title: 'Split The Bill',
+        href: 'https://github.com/WilsonLe/split-the-bill',
+        description:
+          'Simple Bill Splitting Application. Invite your friends to split a bill, enter the expenses, the app will do the splitting. Developed using ReactJS, Firebase.',
+        thumbnailURL: '/images/projects/split-the-bill.jpg',
+        thumbnailAlt: 'Thumbnail of Split The Bill project',
+        order: '5',
+      },
+      {
+        title: 'NextJS Blog Template',
+        href: 'https://github.com/WilsonLe/nextjs-blog-template',
+        description:
+          'A template for simple blog writing. Upload blogs that are written in markdown files. Customizable text and links. Developed using NextJS.',
+        thumbnailURL: '/images/projects/blog-template.jpg',
+        thumbnailAlt: 'Thumbnail of NextJS Blog Template project',
+        order: '6',
+      },
+    ],
   },
 };
 

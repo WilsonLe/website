@@ -29,15 +29,9 @@ export default function Nav() {
                 <Link href="/">
                   <a>
                     <div className="flex-shrink-0 flex items-center">
-                      <div className="h-8 w-32">
-                        <Image
-                          className="object-contain"
-                          src={config.navBar.logo.url}
-                          width={128}
-                          height={32}
-                          alt={config.navBar.logo.alt}
-                        />
-                      </div>
+                      <h1 className="text-gray-300 text-2xl font-semibold">
+                        {config.navBar.logo.text}
+                      </h1>
                     </div>
                   </a>
                 </Link>

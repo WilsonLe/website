@@ -23,6 +23,10 @@ const getStaticProps: GetStaticProps = async () => {
   const projectCards = config.projects.cards.sort(
     (a, b) => parseInt(b.order) - parseInt(a.order)
   );
+
+  if (projectCards.length > 3) {
+    projectCards.splice(3);
+  }
   return {
     props: { blogHeaders, projectCards },
   };
