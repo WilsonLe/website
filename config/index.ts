@@ -150,7 +150,7 @@ const config = {
         title: 'ReactJS Music Player',
         href: 'https://github.com/WilsonLe/react-music-player',
         description:
-          'A clean, minimalistic, responsive music player web application, with customizable music library. Developed using ReactJS, hosted on Vercel.',
+          'A clean, minimalistic, responsive music player application, with customizable music library. Developed using ReactJS, hosted on Vercel.',
         thumbnailURL: '/images/projects/music-player.jpg',
         thumbnailAlt: 'thumbnail of the ReactJS Music Player project',
         order: '3',
