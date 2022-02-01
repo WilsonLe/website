@@ -67,9 +67,11 @@ const icons = [
 
 export default function Footer() {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8 border-t">
       <div className="flex flex-1 flex-col items-center">
-        <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Send a message</h1>
+        <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+          Send a message
+        </h1>
         <div className="flex flex-1 flex-row justify-center mt-8 space-x-6 md:order-2">
           {icons.map((icon) => (
             <a
