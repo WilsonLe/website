@@ -36,6 +36,7 @@ const ResearchBlog: NextPage<Props> = ({ blogData }) => {
               <h1 className=" font-bold text-4xl">{blogData.title}</h1>
               <div className="max-w-2xl mx-auto my-6">
                 <div
+                  className="markdown-body"
                   dangerouslySetInnerHTML={{ __html: blogData.htmlContent }}
                 />
               </div>

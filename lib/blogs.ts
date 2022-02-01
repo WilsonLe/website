@@ -7,6 +7,8 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const blogsDir = path.join(process.cwd(), 'public', 'blogs');
 
@@ -83,6 +85,8 @@ export async function getBlogData(id: string) {
   const processedContent = await remark()
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
     .use(rehypeRaw)
     .use(rehypeStringify)
     .process(matterResult.content);
