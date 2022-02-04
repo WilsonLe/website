@@ -1,22 +1,19 @@
 ---
-title: Create a blogging site with NextJS.
+title: Create Blogging Site With NextJS
 order: 1
-thumbnailURL: /images/blogs/my-first-blog/thumbnail.jpg
+thumbnailURL: /images/blogs/blog-with-nextjs/thumbnail.jpg
 thumbnailAlt: thumbnail description
 description: How I created a blogging site and deployed it using NextJS and Vercel.
 ---
 
 # Table of content
 
-- [What is NextJS](#what-is-nextjs)
-  - [The problem with ReactJS](##the-problem-with-reactjs)
-  - [The solution of NextJS](##the-solution-of-nextjs)
+- [Problems of ReactJS](#problems-of-reactjs)
+- [Solution of NextJS](#solution-of-nextjs)
 - [Get Started](#get-started)
 - [Reference](#reference)
 
-# What is NextJS
-
-## The problem with ReactJS
+# Problems of ReactJS
 
 When building a ReactJS application from scratch, there are some important aspects that we need to take into consideration:
 
@@ -28,7 +25,24 @@ When building a ReactJS application from scratch, there are some important aspec
 
 4. You might have to pre-render some ReactJS page into static HTML for performance and SEO. You might want to dynamically render your application using server-side render (SSR) or client-side render (CSR).
 
-# Get started
+# Solution of NextJS
+
+NextJS is a React Framework that solves all of the above problems with built in features:
+
+1. Pre-renders all of your code.
+
+- NextJS offers static site generation (SSG) where it renders your React code into HTML, then deploy the HTML file to CDN for fast and reliable deliveries.
+- NextJS also offers server-side rendering (SSR) where it renders React code into HTML in the server, and only update the client HTML the Reactive way.
+- Most importantly, NextJS offer both of these feature on a per page basis, meaning you can decide which pages gets rendered statically, which page gets rendered dynamically.
+
+2. Automatic code splitting to optimize code for production.
+
+3. Built in API routes for writing server-side code.
+
+# Get Started
+
+Clone the following repo and follow the README.md instruction to start upload your blogs:
+https://github.com/WilsonLe/nextjs-blog-template
 
 # Reference
 
