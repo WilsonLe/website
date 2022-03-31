@@ -42,7 +42,7 @@ NextJS is a React Framework that solves all of the above problems with built in 
 # Get Started
 
 Clone the following repo and follow the README.md instruction to start upload your blogs:
-https://github.com/WilsonLe/nextjs-blog-template
+[https://github.com/WilsonLe/nextjs-blog-template](https://github.com/WilsonLe/nextjs-blog-template)
 
 # Reference
 
