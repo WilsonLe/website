@@ -14,6 +14,19 @@
   color: black !important;
 }
 
+.markdown-body ol {
+  list-style-type: decimal;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+}
+
+.markdown-body a {
+  color: blue;
+  text-decoration: underline;
+}
+
 @media (max-width: 767px) {
   .markdown-body {
     padding: 0px;

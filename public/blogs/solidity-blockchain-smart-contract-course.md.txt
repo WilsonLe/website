@@ -1,0 +1,7 @@
+---
+title: Solidity, Blockchain, and Smart Contract Course
+order: 2
+thumbnailURL: /images/blogs/blog-with-nextjs/thumbnail.jpg
+thumbnailAlt: thumbnail description
+description: A log of my journey following Solidity, Blockchain, Smart Contract course.
+---
