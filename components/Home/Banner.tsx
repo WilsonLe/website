@@ -64,8 +64,27 @@ export default function Banner() {
               </h3>
             </div>
             <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-              <p>{config.homePage.banner.paragraph1}</p>
-              <p>{config.homePage.banner.paragraph2}</p>
+              <p>
+                I&apos;m a Computer Science Major at Denison University.
+                I&apos;m a Fullstack application engineer/developer, with
+                experience in <Link href="https://reactjs.org/">React</Link>,{' '}
+                <Link href="https://reactnative.dev/">React Native</Link>,{' '}
+                <Link href="https://tailwindcss.com/">TailwindCSS</Link>,{' '}
+                <Link href="https://nodejs.org/">NodeJS</Link>,{' '}
+                <Link href="https://www.mongodb.com/">MongoDb</Link>,{' '}
+                <Link href="https://firebase.google.com/">Firebase</Link>,{' '}
+                <Link href="https://www.docker.com/">Docker</Link>, and{' '}
+                <Link href="https://strapi.io/">Strapi</Link>.
+              </p>
+              <p>
+                I develop applications that create positive impacts for people
+                around me, such as marketplace and chat application for Denison:{' '}
+                <Link href="https://deerx.vercel.app">DeerX</Link> using React
+                Native and Firebase. I&apos;m currently working for{' '}
+                <Link href="https://www.dsw.com/">DSW</Link> as a Cloud
+                Application Engineer intern to develop and maintain the
+                company&apos;s content service.
+              </p>
             </div>
             <div className="mt-5 max-w-2xl mx-auto">
               <button

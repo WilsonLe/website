@@ -2,12 +2,13 @@
 title: Create Blogging Site With NextJS
 order: 1
 thumbnailURL: /images/blogs/blog-with-nextjs/thumbnail.jpg
-thumbnailAlt: thumbnail description
+thumbnailAlt: logo of next js and typescript
 description: How I created a blogging site and deployed it using NextJS and Vercel.
 ---
 
 # Table of content
 
+- [Table of content](#table-of-content)
 - [Problems of ReactJS](#problems-of-reactjs)
 - [Solution of NextJS](#solution-of-nextjs)
 - [Get Started](#get-started)
