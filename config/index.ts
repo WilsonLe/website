@@ -65,10 +65,10 @@ const config = {
       header2: `Hi, I'm Wilson Le`,
 
       // paragraph1 value
-      paragraph1: `I'm a Computer Science and Data Analytics Major at Denison University. I'm a Fullstack application engineer/developer, with experience in React, React Native, TailwindCSS, NodeJS, MongoDb, Firebase.`,
+      // paragraph1: `I'm a Computer Science Major at Denison University. I'm a Fullstack application engineer/developer, with experience in React, React Native, TailwindCSS, NodeJS, MongoDb, Firebase, Docker, Kubernettes, and Strapi.`,
 
       // paragraph2 value
-      paragraph2: `I develop applications that create impacts for people around me, such as secondary marketplace and chat application for Denison using React Native. I also develop applications makes daily task more convenient, such as an API that checks laundry status of our univeristy dorms using NodeJS, or an application that splits the bill amongst friends using React.`,
+      // paragraph2: `I develop applications that create positive impacts for people around me, such as marketplace and chat application for Denison using React Native and Firebase. I'm currently working for DSW as a Cloud Application Engineer intern`,
     },
 
     // home page blog section
@@ -102,6 +102,24 @@ const config = {
 
       // banner title
       title: 'My Blogs',
+
+      // banner subtitle
+      subtitle: '',
+    },
+  },
+
+  // note page
+  notes: {
+    // note banner
+    banner: {
+      // banner image url
+      imageURL: '/images/notes/academic-quad-aerial.jpeg',
+
+      // banner image description
+      imageAlt: 'temporary implementation',
+
+      // banner title
+      title: 'My Notes',
 
       // banner subtitle
       subtitle: '',
@@ -179,6 +197,15 @@ const config = {
         thumbnailURL: '/images/projects/blog-template.jpg',
         thumbnailAlt: 'Thumbnail of NextJS Blog Template project',
         order: '6',
+      },
+      {
+        title: 'Marketplace and Chat application',
+        href: 'https://deerx.vercel.app',
+        description:
+          'Fullstack mobile app for Denison students to buy and sell used items. Built-in chat feature. Developed using React Native and Firebase.',
+        thumbnailURL: '/images/projects/deerx.jpg',
+        thumbnailAlt: 'Thumbnail of marketplace and chat application',
+        order: '7',
       },
     ],
   },
