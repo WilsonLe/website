@@ -22,7 +22,7 @@ Chapter 4 discusses process, one of the most fundamental abstractions that the O
 
 A computer will run a large number of programs - processes - at the same time. This is achieved by virtualizing the CPU: running Process 1, stopping Process 1, running Process 2, and so on, the OS can make it seems like virtual CPUs exist when in fact there are only a few physical CPUs.
 
-One basic technique known as **time sharing** allows user to concurrently run programs as many times as the user wants. The potential cost is performance, as each process will run more slwwly if the CPU's must be shared. To implementment CPU virtualization, OS need low-level machinery (mechanism) and high-level intelligence (policies).
+One basic technique known as **time sharing** allows user to concurrently run programs as many times as the user wants. The potential cost is performance, as each process will run more slowly if the CPU's must be shared. To implementment CPU virtualization, OS need low-level machinery (mechanism) and high-level intelligence (policies).
 
 ## Abstraction: The Process
 
@@ -35,7 +35,7 @@ A thread is a light weight process. A process can spawn in multiple threads. Whi
 1. Create new process
 2. Destroy a running process
 3. Wait for a process to stop running
-4. Miscelaneous control, i.e: stop a processing from running for a while, then resume it
+4. Miscellaneous control, i.e: stop a processing from running for a while, then resume it
 5. Status of a process (how long it has run for, what state it is in)
 
 ## Process Creation
