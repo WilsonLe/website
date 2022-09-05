@@ -3,7 +3,7 @@ title: CS372 Chapter 3-4 Reading Note
 order: 1
 thumbnailURL: /images/notes/swasey.jpeg
 thumbnailAlt: Denison Swasey Chapel
-description: Introduction to Operating Systems
+description: Operating System's Processes
 ---
 
 # Table of content
