@@ -70,7 +70,7 @@ The **CPU scheduler**, a topic we’ll discuss in great detail soon, determines 
 
 ## The Wait System Call
 
-Sometimes, as it turns out, it is quite useful for a parent to wait for a child process to finish what it has been doing. This task is accomplished with the **wait()** system call.
+Sometimes, as it turns out, it is quite useful for a parent to wait for a child process to finish what it has been doing. This task is accomplished with the **wait()** system call. When a parent is **waiting**, its state will be set to blocked.
 
 In the example code below, the parent process calls wait() to delay its execution until the child finishes executing. When the child is done, wait() returns to the parent.
 
@@ -95,6 +95,7 @@ int main(int argc, char *argv[]) {
 		int rc_wait = wait(NULL);
 		printf("hello, I am parent of %d (rc_wait:%d) (pid:%d)\n", rc, rc_wait, (int) getpid());
 	}
+}
 ```
 
 Adding a wait() call to the code above makes the output deterministic because we know that the child will always print first. This is because even if the parent process gets scheduled first, the parent process still have to wait for the child process to finish.
