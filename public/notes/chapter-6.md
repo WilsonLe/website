@@ -82,7 +82,7 @@ By doing so, the OS thus ensures that when the return-from-trap instruction is f
 
 ## Worried About Concurrency?
 
-Plausiable questions:
+Plausible questions:
 
 - What happens when, during a system call, a timer interrupt occurs?
 - What happens when you’re handling one interrupt and another one happens?
