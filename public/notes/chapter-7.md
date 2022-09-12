@@ -29,8 +29,7 @@ description: Scheduling
 Questions:
 
 - How should we develop a basic framework for thinking about scheduling policies?
-- What are the key assumptions? What metrics are important? What basic approaches have been used in the earliest of com-
-  puter systems?
+- What are the key assumptions? What metrics are important? What basic approaches have been used in the earliest of computer systems?
 
 # Workload Assumptions
 
@@ -133,13 +132,13 @@ Any time a new job enters the system, the STCF scheduler determines which of the
 
 ![figure 7.5](https://i.ibb.co/7RCSQVY/7-5.png)
 
-Given the 3 jobs earlier, the STCF policy would run A first, then when B and C start, the policy preempt A and run B and C to completion, then continue next to A. With this policy, the average turnaround time is ((120 - 0) + (20 - 10) + (30 - 10)) / 3 = 50. With the assumption stated, we can proved that this policy is optimal.
+Given the 3 jobs earlier, the STCF policy would run A first, then when B and C start, the policy preempt A and run B and C to completion, then continue next to A. With this policy, the average turnaround time is ((120 - 0) + (20 - 10) + (30 - 10)) / 3 = 50. With the assumption stated, we can prove that this policy is optimal.
 
 # Response Time Metric
 
 Normal users would sit at a terminal and demand interactive performance from the system as well. And thus, a new metric was born: response time. We define response time as the time from when the job arrives in a system to the first time it is scheduled.
 
-All of the policy above are bad for response time. Take STCF for isntance: if three jobs arrive at the same time, the third job has to wait for the previous two jobs to run in their entirety before being scheduled just once.
+All of the policies above are bad for response time. Take STCF for instance: if three jobs arrive at the same time, the third job has to wait for the previous two jobs to run in their entirety before being scheduled just once.
 
 How to build a scheduler policy that is sensitive to response time?
 
@@ -153,13 +152,13 @@ Assume three jobs A, B, and C arrive at the same time in the system, and that th
 
 The average response time of RR is (0 + 1 + 2) / 3 = 1, while for SJF, the average response time is (0 + 5 + 10) / 3 = 5.
 
-The length of the time slice is critical for RR. The shorter it is, the better the performance of RR under the response-time metric. However, making the time slice too short is problematic: suddenly the cost of context switching will dominate overall performance. Thus, deciding on the length of the time slice presents a trade-off to a system designer, making it long enough to amortize the cost of switching without making it so long that the system is no longer responsive.
+The length of the time slice is critical for RR. The shorter it is, the better the performance of RR under the response-time metric. However, making the time slice too short is problematic: suddenly the cost of context switching will dominate overall performance. Thus, deciding on the length of the time slice presents a trade-off to a system designer, making it long enough to amortize the cost of switching without making it so long that the system is no longer responsive. The length of the slice generally should be a multiple of the time to interrupt the CPU.
 
 More generally, any policy (such as RR) that is fair, i.e., that evenly divides the CPU among active processes on a small time scale, will perform poorly on metrics such as turnaround time. Indeed, this is an inherent trade-off: if you are willing to be unfair, you can run shorter jobs to completion, but at the cost of response time; if you instead value fairness, response time is lowered, but at the cost of turnaround time. This type of trade-off is common in systems; you can’t have your cake and eat it too.
 
 # Incorporating I/O
 
-Now we one more assumption: there will be I/O. The scheduler clearly has a decision to make when a job initiates an I/O request, because the currently-running job won’t be using the CPU during the I/O; it is blocked waiting for I/O completion. If the I/O is sent to a hard disk drive, the process might be blocked for a few milliseconds or longer, depending on the current I/O load of the drive. Thus, the scheduler should probably schedule another job on the CPU at that time.
+Now we have one more assumption: there will be I/O. The scheduler clearly has a decision to make when a job initiates an I/O request, because the currently-running job won’t be using the CPU during the I/O; it is blocked waiting for I/O completion. If the I/O is sent to a hard disk drive, the process might be blocked for a few milliseconds or longer, depending on the current I/O load of the drive. Thus, the scheduler should probably schedule another job on the CPU at that time.
 
 ![figure 7.8-7.9](https://i.ibb.co/XsGn0WW/7-8-7-9.png)
 
@@ -169,4 +168,4 @@ By treating each CPU burst as a job, the scheduler makes sure processes that are
 
 # No More Oracle
 
-In the next chapter, we will solve the problem of removing the final assumption: now the scheduler no longer knows how long each process is going to take.
+**In** the next chapter, we will solve the problem of removing the final assumption: now the scheduler no longer knows how long each process is going to take.

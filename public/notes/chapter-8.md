@@ -117,7 +117,7 @@ Of course, the addition of the time period S leads to the obvious ques- tion: wh
 
 Rule 4: Once a job uses up its time allotment at a given level (regardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).
 
-![]()
+![figure 8.6](https://i.ibb.co/Jm4Pckk/8-6.png)
 
 Figure 8.6 shows what happens when a workload tries to game the scheduler with the old Rules 4a and 4b (on the left) as well the new anti-gaming Rule 4. Without any protection from gaming, a process can issue an I/O just before a time slice ends and thus dominate CPU time. With such protections in place, regardless of the I/O behavior of the process, it slowly moves down the queues, and thus cannot gain an unfair share of the CPU.
 
