@@ -53,7 +53,7 @@ In this way, MLFQ will try to learn about processes as they run, and thus use th
 # Attempt 1: How To Change Priority
 
 - Rule 3: When a job enters the system, it is placed at the highest priority (the topmost queue).
-- Rule 4a: If a job uses up an entire time slice while running, its pri- ority is reduced (i.e., it moves down one queue).
+- Rule 4a: If a job uses up an entire time slice while running, its priority is reduced (i.e., it moves down one queue).
 - Rule 4b: If a job gives up the CPU before the time slice is up, it stays at the same priority level.
 
 ![figure 8.1](https://i.ibb.co/0MNrC18/8-1.png)
