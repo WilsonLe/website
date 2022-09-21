@@ -23,13 +23,13 @@ Early machines didn’t provide much of an abstraction to users.
 
 ![early systems figure](https://i.ibb.co/tZDP4Jy/early-systems.png)
 
-The OS was a set of routines (a library, really) that sat in memory (start- ing at physical address 0 in this example), and there would be one run- ning program (a process) that currently sat in physical memory (starting at physical address 64k in this example) and used the rest of memory.
+The OS was a set of routines (a library, really) that sat in memory (starting at physical address 0 in this example), and there would be one running program (a process) that currently sat in physical memory (starting at physical address 64k in this example) and used the rest of memory.
 
 # Multiprogramming and Time Sharing
 
 Multiprogramming refers to having multiple processes ready to run at a given time, and the OS would switch between them, for example when one decided to perform an I/O. Doing so increased the effective utilization of the CPU.
 
-The notion of interactivity became impor- tant, as many users might be concurrently using a machine, each waiting for (or hoping for) a timely response from their currently-executing tasks.
+The notion of interactivity became important, as many users might be concurrently using a machine, each waiting for (or hoping for) a timely response from their currently-executing tasks.
 
 One way to implement time sharing would be to run one process for a short while, giving it full access to all memory, then stop it, save all of its state to some kind of disk (including all of physical memory), load some other process’s state, run it for a while, and thus implement some kind of crude sharing of the machine.
 
