@@ -1,102 +1,107 @@
 ---
-title: CS372 Chapter 10 Reading Note
+title: CS372 Chapter 15 Reading Note
 order: 1
 thumbnailURL: /images/notes/swasey.jpeg
 thumbnailAlt: Denison Swasey Chapel
-description: Memory API
+description: Mechanism - Address Translation
 ---
 
 # Table of content
 
 - [Table of content](#table-of-content)
-- [Types Of Memory](#types-of-memory)
-- [Malloc](#malloc)
-- [Free](#free)
-- [Common Errors](#common-errors)
-  - [Forgetting To Allocate Memory](#forgetting-to-allocate-memory)
-  - [Not Allocating Enough Memory](#not-allocating-enough-memory)
-  - [Forgetting to Initialize Allocated Memory](#forgetting-to-initialize-allocated-memory)
-  - [Forgetting To Free Memory](#forgetting-to-free-memory)
-  - [Freeing Memory Before You Are Done With It](#freeing-memory-before-you-are-done-with-it)
-  - [Calling "free()" Incorrectly](#calling-free-incorrectly)
+- [Address Translation](#address-translation)
+- [Assumptions](#assumptions)
+- [Example 1](#example-1)
+- [Dynamic (Hardware-based) Relocation](#dynamic-hardware-based-relocation)
+- [Hardware Support: A Summary](#hardware-support-a-summary)
+- [Operating System Issues](#operating-system-issues)
 
-# Types Of Memory
+# Address Translation
 
-- Stack memory
+Efficiency and control together are two of the main goals of any modern operating system.
+
+In virtualizing memory, we want to attaining both efficiency and control while providing the desired virtualization.
+
+Efficiency dictates that we make use of hardware support, which at first will be quite rudimentary (e.g., just a few registers) but will grow to be fairly complex (e.g., TLBs, page-table support, and so forth, as you will see).
+
+Control implies that the OS ensures that no application is allowed to access any memory but its own; thus, to protect applications from one another, and the OS from applications, we will need help from the hardware here too.
+
+The generic technique we will use is something that is referred to as **hardware-based address translation**, or just **address translation** for short. The hardware transform each memory address, changing the virtual address provided by the instruction to a physical address where the desired information is actually located. Thus, on each and every memory reference, an address translation is performed by the hardware to redirect application memory references to their actual locations in memory.
+
+The OS manage memory, keeping track of which locations are free and which are in use, and judiciously intervening to maintain control over how memory is used.
+
+The goal of all of this work is to create a beautiful illusion: that the program has its own private memory, where its own code and data reside.
+
+# Assumptions
+
+First attempt assumptions:
+
+- The user’s address space must be placed contiguously in physical memory
+- The size of the address space is not smaller than the size of physical memory
+- Each address space is exactly the same size
+
+# Example 1
+
+Refer to this C and compiled assembly code:
 
 ```c
 void func() {
-  int x; // declares an integer on the stack
+  int x = 3000; // thanks, Perry.
+  x = x + 3; //line of code we are interested in
   ...
-  // when func() ends, x is free, stack collapses to func()'s caller
-}
-
 ```
 
-- Heap memory
-
-```c
-void func() {
-  int *x = (int *) malloc(sizeof(int)); // allocate memory in the heap
-  ...
-  // must free(x) at the end of func(), or else the memory is leaked. Unlike stack memory, the memory won't collapse when the call stack collapses
-}
+```
+128: movl 0x0(%ebx), %eax     ;load 0+ebx into eax
+132: addl $0x03, %eax         ;add 3 to eax register
+135: movl %eax, 0x0(%ebx)     ;store eax back to mem
 ```
 
-# Malloc
+![figure 15.2](https://i.ibb.co/qJG96DR/15-2.png)
 
-The `malloc()` call is quite simple: you pass it a size asking for some room on the heap, and it either succeeds and gives you back a pointer to the newly-allocated space, or fails and returns NULL.
+You can see the OS using the first slot of physical memory for itself, and that it has relocated the process from the example above into the slot starting at physical memory address 32 KB. The other two slots are free (16 KB-32 KB and 48 KB-64 KB).
 
-# Free
+From the program’s perspective, its address space starts at address 0 and grows to a maximum of 16 KB; all memory references it generates should be within these bounds.
 
-As it turns out, allocating memory is the easy part of the equation; knowing when, how, and even if to free memory is the hard part.
+# Dynamic (Hardware-based) Relocation
 
-```c
-int *x = malloc(10 * sizeof(int));
-  ...
-  free(x);
-```
+We’ll need two hardware registers within each CPU: one is called the base register, and the other the bounds (sometimes called a limit register). This base-and-bounds pair is going to allow us to place the address space anywhere we’d like in physical memory, and do so while ensuring that the process can only access its own address space.
 
-# Common Errors
+In this setup, each program is written and compiled as if it is loaded at address zero. However, when a program starts running, the OS decides where in physical memory it should be loaded and sets the base register to that value. In the example above, the OS decides to load the process at physical address 32 KB and thus sets the base register to this value.
 
-## Forgetting To Allocate Memory
+![figure 15.2.5](https://i.ibb.co/8cmndSv/15-2-5.png)
 
-Many routines expect memory to be allocated before you call them. For example, the routine strcpy(dst, src) copies a string from a source pointer to a destination pointer.
+When a program runs, any memory reference is generated by the process is **translated** by the processor: physical address = virtual address + base
 
-```c
-// wrong way:
-char *src = "hello";
-  char *dst;        // oops! unallocated
-  strcpy(dst, src); // segfault and die
+# Hardware Support: A Summary
 
-// correct way
-char *src = "hello";
-  char *dst = (char *) malloc(strlen(src) + 1);
-  strcpy(dst, src); // work properly
-```
+We require two different CPU modes.
 
-## Not Allocating Enough Memory
+1. The OS runs in privileged mode (or kernel mode), where it has access to the entire machine; applications run in user mode, where they are limited in what they can do.
+2. A single bit, perhaps stored in some kind of processor status word, indicates which mode the CPU is currently running in; upon certain spe- cial occasions (e.g., a system call or some other kind of exception or inter- rupt), the CPU switches modes.
 
-A related error is not allocating enough memory, sometimes called a buffer overflow.
+![figure 15.3](https://i.ibb.co/ZN4QpmB/15-3.png)
 
-```c
-char *src = "hello";
-  char *dst = (char *) malloc(strlen(src)); // too small!
-  strcpy(dst, src); // work properly
-```
+The hardware must also provide the base and bounds registers themselves; each CPU thus has an additional pair of registers, part of the memory management unit (MMU) of the CPU. The hardware must also be able to check whether the address is valid, which is accomplished by using the bounds register and some circuitry within the CPU.
 
-## Forgetting to Initialize Allocated Memory
+The hardware should provide special instructions to modify the base and bounds registers, allowing the OS to change them when different processes run. These instructions are privileged; only in kernel (or priv- ileged) mode can the registers be modified.
 
-With this error, you call `malloc()` properly, but forget to fill in some values into your newly-allocated data type.
+Finally, the CPU must be able to generate exceptions in situations where a user program tries to access memory illegally (with an address that is “out of bounds”); in this case, the CPU should stop executing the user program and arrange for the OS “out-of-bounds” exception handler to run.
 
-## Forgetting To Free Memory
+# Operating System Issues
 
-Another common error is known as a memory leak, and it occurs when you forget to free memory. In long-running applications or systems (such as the OS itself), this is a huge problem, as slowly leaking memory even## tually leads one to run out of memory, at which point a restart is required.
+The OS must take action when a process is created, finding space for its address space in memory. Given our assumptions that each address space is (a) smaller than the size of physical memory and (b) the same size, the OS can simply view physical memory as an array of slots, and track whether each one is free or in use.
 
-## Freeing Memory Before You Are Done With It
+![figure 15.4](https://i.ibb.co/NKD7k50/15-4.png)
 
-Programs also sometimes free memory more than once; this is known as the double free. The result of doing so is undefined.
+When a new process is created, the OS will have to search a data structure (often called a **free list**) to find room for the new address space and then mark it used.
 
-## Calling "free()" Incorrectly
+With variable-sized address spaces, life is more complicated, but we will leave that concern for future chapters.
 
-`free()` expects you only to pass to it one of the pointers you received from `malloc()` earlier. When you pass in some other value, bad things can (and do) happen.
+![figure 15.5](https://i.ibb.co/TwMc3yc/15-5.png)
+
+![figure 15.6](https://i.ibb.co/KNSb34m/15-6.png)
+
+Illustrate much of the hardware/OS interaction in a timeline. The first figure shows what the OS does at boot time to ready the machine for use, and the second shows what happens when a process (Process A) starts running; note how its memory transla- tions are handled by the hardware with no OS intervention.
+
+At some point (middle of second figure), a timer interrupt occurs, and the OS switches to Process B, which executes a “bad load” (to an illegal memory address); at that point, the OS must get involved, terminating the process and cleaning up by freeing B’s memory and removing its entry from the process table.
