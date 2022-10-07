@@ -28,7 +28,7 @@ We usually have one page table for every process in the system. With a hundred a
 
 One simple way to reduce memory: use bigger pages. Take our 32-bit address space again, but this time assume 16KB pages.
 
-We would thus have an 18-bit VPN plus a 14-bit offset. As- suming the same size for each PTE (4 bytes), we now have 2^18 entries in our linear page table and thus a total size of 1MB per page table, a factor of 4 reduction.
+We would thus have an 18-bit VPN plus a 14-bit offset. Assuming the same size for each PTE (4 bytes), we now have 2^18 entries in our linear page table and thus a total size of 1MB per page table, a factor of 4 reduction.
 
 The major problem with this approach, however, is that big pages lead to waste within each page, a problem known as internal fragmentation (as the waste is internal to the unit of allocation).
 
