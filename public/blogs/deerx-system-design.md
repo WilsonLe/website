@@ -50,3 +50,4 @@ Because DeerX is an application for Denison students to buy and sell items from 
   - Since DeerX is a mobile app, authenticating using email link requires setting up deep links for the app to allow app to open when user press a link (instead of opening the link on their default web browser).
   - There exist a small risk where the link is exposed to the public (even though it was sent directly to the user's email address). When the link is exposed, anyone can click on the link to authenticate. A work around that we implemented was to save user's email address to local storage of the user's device. When the intended user open the link, the app will check
 
+# Work In Progress...
