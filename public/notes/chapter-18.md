@@ -1,5 +1,5 @@
 ---
-title: CS372 Chapter 17 Reading Note
+title: CS372 Chapter 18 Reading Note
 order: 1
 thumbnailURL: /images/notes/swasey.jpeg
 thumbnailAlt: Denison Swasey Chapel
@@ -22,11 +22,12 @@ description: Paging
 # Simple Example And Overview
 
 ![figure 18.1](https://i.ibb.co/kHSLrhC/18-1.png)
+
 The figure above presents an example of a tiny address space, only 64 bytes total in size, with four 16-byte pages (virtual pages 0, 1, 2, and 3).
 
 Paging, as we will see, has a number of advantages over our previous approaches:
 
-1. Flexibility: with a fully-developed paging approach, the system will be able to support the abstraction of an address space effectively, regardless of how a process uses the address space; we won’t, for example, make assump- tions about the direction the heap and stack grow and how they are used.
+1. Flexibility: with a fully-developed paging approach, the system will be able to support the abstraction of an address space effectively, regardless of how a process uses the address space; we won’t, for example, make assumptions about the direction the heap and stack grow and how they are used.
 
 2. Simplicity of free-space management that paging affords. For example, when the OS wishes to place our tiny 64-byte address space into our physical memory, it simply finds four free pages (assuming each page has 16 bytes); perhaps the OS keeps a free list of all free pages for this, and just grabs the first four free pages off of this list.
 
@@ -45,7 +46,7 @@ It is important to remember that this page table is a per-process data structure
 
 # Address Translation Example
 
-Let’s imagine the process with that tiny address space (64 bytes) is per- forming a memory access:
+Let’s imagine the process with that tiny address space (64 bytes) is performing a memory access:
 
 ```
 movl <virtual address>, %eax
@@ -81,9 +82,9 @@ Page tables can get terribly large, much bigger than the small segment table or 
 
 A 20-bit VPN implies that there are 220 translations that the OS would have to manage for each process (that’s roughly a million). Assuming we need 4 bytes per page table entry (PTE) to hold the physical translation plus any other useful stuff, we get an immense 4MB of memory needed for each page table
 
-Because page tables are so big, we don’t keep any special on-chip hard- ware in the MMU to store the page table of the currently-running process.
+Because page tables are so big, we don’t keep any special on-chip hardware in the MMU to store the page table of the currently-running process.
 
-Instead, we store the page table for each process in memory somewhere. Let’s assume for now that the page tables live in physical memory that the OS manages; later we’ll see that much of OS memory itself can be vir- tualized, and thus page tables can be stored in OS virtual memory (and even swapped to disk).
+Instead, we store the page table for each process in memory somewhere. Let’s assume for now that the page tables live in physical memory that the OS manages; later we’ll see that much of OS memory itself can be virtualized, and thus page tables can be stored in OS virtual memory (and even swapped to disk).
 
 # What’s Actually In The Page Table?
 

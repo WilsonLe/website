@@ -1,5 +1,5 @@
 ---
-title: CS372 Chapter 20 Reading Note
+title: CS372 Chapter 22 Reading Note
 order: 1
 thumbnailURL: /images/notes/swasey.jpeg
 thumbnailAlt: Denison Swasey Chapel

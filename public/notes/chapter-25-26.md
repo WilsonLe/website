@@ -1,5 +1,5 @@
 ---
-title: CS372 Chapter 23 Reading Note
+title: CS372 Chapter 25-26 Reading Note
 order: 1
 thumbnailURL: /images/notes/swasey.jpeg
 thumbnailAlt: Denison Swasey Chapel
@@ -103,5 +103,3 @@ By using this hardware support, in combination with some help from the operating
 # One More Problem: Waiting For Another
 
 There is another common interaction that arises, where one thread must wait for another to complete some action before it continues. This interaction arises, for example, when a process performs a disk I/O and is put to sleep; when the I/O completes, the process needs to be roused from its slumber so it can continue.
-
-
