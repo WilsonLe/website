@@ -6,6 +6,19 @@ thumbnailAlt: deer x logo
 description: Backend design of fullstack mobile marketplace application with built-in chat function
 ---
 
+# Table of content
+
+- [Table of content](#table-of-content)
+- [General](#general)
+- [Technology Stack](#technology-stack)
+- [Application domains](#application-domains)
+- [User Domain](#user-domain)
+  - [All Normal Users Are Denison Students](#all-normal-users-are-denison-students)
+  - [Users Already Have Their Name And Photo URL](#users-already-have-their-name-and-photo-url)
+  - [Users Have Their Own Profile](#users-have-their-own-profile)
+- [Listing Domain](#listing-domain)
+- [Messaging Domain](#messaging-domain)
+
 # General
 
 DeerX is a fullstack mobile application for Deniosn students (and guest users) with the following domain:
