@@ -22,6 +22,8 @@ description: How to deploy your containerized strapi application to AWS
     - [Edit Bucket Policy To Accept Bucket User](#edit-bucket-policy-to-accept-bucket-user)
     - [Edit Bucket CORS](#edit-bucket-cors)
 - [Database](#database)
+- [Application](#application)
+- [CI/CD](#cicd)
 
 # Cluster
 
@@ -143,3 +145,7 @@ description: How to deploy your containerized strapi application to AWS
 # Database
 
 WIP...
+
+# Application
+
+# CI/CD
