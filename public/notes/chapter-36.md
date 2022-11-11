@@ -21,17 +21,17 @@ description: I/O Devices
 
 # System Architecture
 
-![figure 36.1]()
+![figure 36.1](https://i.ibb.co/rQtCjrX/36-1.png)
 
 The hierarchical structure is implemented because of physics and costs. The faster the bus, the shorter it must be, thus less device can plug into it. Engineer a fast bus is costly. Devices that requires high performance (i.e GPU) are nearer to the CPU then lower priority devices (i.e mice, keyboards).
 
 The figure below is a live example of the Z270 chipset:
 
-![figure 36.2]()
+![figure 36.2](https://i.ibb.co/QnH5Pw7/36-2.png)
 
 # A Canonical Device
 
-![figure 36.3]()
+![figure 36.3](https://i.ibb.co/dGrKQRQ/36-3.png)
 
 The 2 important components is the hardware interface and its internal structure:
 
