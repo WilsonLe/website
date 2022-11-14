@@ -63,6 +63,8 @@ Finally, the third axis is performance. Performance is somewhat challenging to e
 
 The simplest form of striping will stripe blocks across the disks of the system in a round-robin fashion. This approach is designed to extract the most parallelism from the array when requests are made for contiguous chunks of the array.
 
+![figure 38.1](https://i.ibb.co/L8qF7hV/38-1.png)
+
 ## Chunk Sizes
 
 Chunk size mostly affects performance of the array.
@@ -97,6 +99,8 @@ For a large number of random I/Os, we can again use all of the disks, and thus o
 
 With a mirrored system, we simply make more than one copy of each block in the system; each copy should be placed on a separate disk, of course. By doing so, we can tolerate disk failures.
 
+![figure 38.3](https://i.ibb.co/5F57b47/38-3.png)
+
 ## RAID-1 Analysis
 
 From a reliability standpoint, RAID-1 does well. It can tolerate the failure of any one disk.
@@ -115,6 +119,18 @@ Finally, random writes perform as you might expect: N/2 \* R. Each logical write
 
 Parity-based approaches attempt to use less capacity and thus overcome the huge space penalty paid by mirrored systems. They do so at a cost, however: performance.
 
+![figure 38.4](https://i.ibb.co/qF2cq70/38-2.png)
+
+![figure 38.4-1](https://i.ibb.co/nMkzvYB/38-4-1.png)
+
+The parity disk uses XOR (additive parity) to determine if there are odd or even number of 1's (or 0's) in all the disk.
+
+If one disk fail, we can determine the lost bits because we keep track of the previous odd/even state of all the disks.
+
+If the parity disk fail, we did not lost any data.
+
+Another form of parity is subtractive parity. First we read the old data, then the old parity, then we compute the old and the new data. If they are the same, then the parity bit should also stay the same. If they are different, we must flip the old parity bit to the opposite of its current state. Either way, we still need to keep the parity disk in sync with the latest data.
+
 ## RAID-4 Analysis
 
 From a capacity standpoint, RAID-4 uses 1 disk for parity information for every group of disks it is protecting. Thus, our useful capacity for a RAID group is (N − 1) \* B
@@ -131,9 +147,13 @@ We can compute the performance of small random writes in RAID-4 by computing the
 
 A single read (assuming no failure) is just mapped to a single disk, and thus its latency is equivalent to the latency of a single disk request. The latency of a single write requires two reads and then two writes; the reads can happen in parallel, as can the writes, and thus total latency is about twice that of a single disk.
 
+The downside is that on every disk write operation, we have to update the parity disk. Keeping the parity disk synced with the latest data requires some extra overhead. This is called the small-write problem.
+
 # RAID Level 5: Rotating Parity
 
-To address the small-write problem (at least, partially), it rotates the parity block across drives.
+To address the small-write problem (at least, partially), it rotates the parity block across drives. Now the computing the parity bit is divided accross all disks.
+
+![figure 38.7](https://i.ibb.co/q7Q6Jnx/38-7.png)
 
 ## RAID-5 Analysis
 
