@@ -33,6 +33,8 @@ description: Interlude - Files and Directories
 - file: contiguous array of bytes. It has a low-level name that is not exposed to the user. This name is referred to as the inode number.
 - directory: also has an inode number. A directory content is a list of pairs of user-readable name, and low-level name. Each entry in a directory refers to either files or other directories.
 
+Inode is a datastructure for representing files and directories. They are a folder/file unique identifier that is low-level and non-human-readable.
+
 # Creating Files
 
 To create a file, we have a `open()` system call. The system call returns a file descriptor. A file descriptor is just an integer, private per process, and is used in UNIX systems to access files; thus, once a file is opened, you use the file descriptor to read or write the file, assuming you have permission to do so.
@@ -59,11 +61,13 @@ The first argument is a file descriptor. The second argument is an offset to a p
 
 # Shared File Table Entries: fork() And dup()
 
-In many cases, the mapping of file descriptor to an entry in the open file table is a one-to-one mapping. For example, when a process runs, it might decide to open a file, read it, and then close it; in this example, the file will have a unique entry in the open file table.
+A child process from fork will have copies of variables, but shared file directories if files are opened while executing fork.
+
+In many cases, the mapping of file descriptor to an entry in the open file table is a one-to-one mapping. When a process runs, it might decide to open a file, read it, and then close it.
 
 Even if some other process reads the same file at the same time, each will have its own entry in the open file table. In this way, each logical reading or writing of a file is independent, and each has its own current offset while it accesses the given file.
 
-Sharing open file table entries across parent and child is occasionally useful. For example, if you create a number of processes that are cooper- atively working on a task, they can write to the same output file without any extra coordination.
+Sharing open file table entries across parent and child is occasionally useful. For example, if you create a number of processes that are cooperatively working on a task, they can write to the same output file without any extra coordination.
 
 One other interesting, and perhaps more useful, case of sharing occurs with the `dup()` system call. The system call allows a process to create a new file descriptor that refers to the same underlying open file as an existing descriptor.
 
