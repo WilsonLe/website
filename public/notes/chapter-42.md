@@ -177,9 +177,9 @@ Below is the summary of physical journalling (data logging) and logical journall
 
 ## Wrapping Up Journaling: A Timeline
 
-![figure 42.1]()
+![figure 42.1](https://i.ibb.co/SKhMtJy/42-1.png)
 
-![figure 42.2]()
+![figure 42.2](https://i.ibb.co/Tbqyk8j/42-2.png)
 
 # Solution #3: Other Approaches
 
