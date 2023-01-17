@@ -67,14 +67,38 @@ export default function Banner() {
               <p>
                 I&apos;m a Computer Science Major at Denison University.
                 I&apos;m a Fullstack application engineer/developer, with
-                experience in <Link href="https://reactjs.org/">React</Link>,{' '}
-                <Link href="https://reactnative.dev/">React Native</Link>,{' '}
-                <Link href="https://tailwindcss.com/">TailwindCSS</Link>,{' '}
-                <Link href="https://nodejs.org/">NodeJS</Link>,{' '}
-                <Link href="https://www.mongodb.com/">MongoDb</Link>,{' '}
-                <Link href="https://firebase.google.com/">Firebase</Link>,{' '}
-                <Link href="https://www.docker.com/">Docker</Link>, and{' '}
-                <Link href="https://strapi.io/">Strapi</Link>.
+                experience in web technologies like{' '}
+                <Link href="https://reactjs.org">React</Link>,{' '}
+                <Link href="https://reactnative.dev">React Native</Link>,{' '}
+                <Link href="https://tailwindcss.com">TailwindCSS</Link>,{' '}
+                <Link href="https://nodejs.org">NodeJS</Link>,{' '}
+                <Link href="https://www.mongodb.com">MongoDb</Link>,{' '}
+                <Link href="https://firebase.google.com">Firebase</Link>,{' '}
+                <Link href="https://www.docker.com">Docker</Link>, and{' '}
+                <Link href="https://strapi.io">Strapi</Link>.
+              </p>
+              <p>
+                I also have experience with cloud technologies like{' '}
+                <Link href="https://cloud.google.com">GCP</Link>&apos;s{' '}
+                <Link href="https://firebase.google.com">Firebase</Link>,{' '}
+                <Link href="https://cloud.google.com/run">Cloud Run</Link>,{' '}
+                <Link href="https://cloud.google.com/sql">Cloud SQL</Link>,{' '}
+                <Link href="https://cloud.google.com/storage">
+                  Cloud Storage
+                </Link>
+                , and <Link href="https://aws.amazon.com/">AWS</Link>&apos;s{' '}
+                <Link href="https://aws.amazon.com/s3">
+                  Simple Storage Service (S3)
+                </Link>
+                ,{' '}
+                <Link href="https://aws.amazon.com/rds">
+                  Relational Database Service
+                </Link>
+                ,{' '}
+                <Link href="https://aws.amazon.com/ecs">
+                  Elastic Container Service
+                </Link>
+                , etc. (check out my resume for details).
               </p>
               <p>
                 I develop applications that create positive impacts for people
