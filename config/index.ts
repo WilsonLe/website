@@ -69,6 +69,9 @@ const config = {
 
       // paragraph2 value
       // paragraph2: `I develop applications that create positive impacts for people around me, such as marketplace and chat application for Denison using React Native and Firebase. I'm currently working for DSW as a Cloud Application Engineer intern`,
+
+      extraImageUrl: '/images/home/fullstack-skills.jpeg',
+      extraImageAlt: 'My fullstack skills',
     },
 
     // home page blog section

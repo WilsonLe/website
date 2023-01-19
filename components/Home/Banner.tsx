@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import config from '../../config';
+import banner2 from '../../public/images/home/fullstack-skills.jpeg';
+
 export default function Banner() {
   return (
     <div className="bg-white overflow-hidden">
@@ -43,7 +45,7 @@ export default function Banner() {
             </svg>
             <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
               <figure>
-                <div className=" aspect-w-16 aspect-h-9 lg:aspect-1">
+                <div className="aspect-w-16 aspect-h-9 lg:aspect-1">
                   <Image
                     className="rounded-lg shadow-lg object-cover object-center"
                     src={config.homePage.banner.imageURL}
@@ -78,7 +80,9 @@ export default function Banner() {
                 <Link href="https://strapi.io">Strapi</Link>.
               </p>
               <p>
-                I also have experience with cloud technologies like{' '}
+                I also have experience with infrastructure as code using{' '}
+                <Link href="https://www.terraform.io/">Terraform</Link> to
+                manage cloud technologies like{' '}
                 <Link href="https://cloud.google.com">GCP</Link>&apos;s{' '}
                 <Link href="https://firebase.google.com">Firebase</Link>,{' '}
                 <Link href="https://cloud.google.com/run">Cloud Run</Link>,{' '}
@@ -98,13 +102,15 @@ export default function Banner() {
                 <Link href="https://aws.amazon.com/ecs">
                   Elastic Container Service
                 </Link>
-                , etc. (check out my resume for details).
+                , <Link href="https://aws.amazon.com/lambda">Lambda</Link>, etc.
+                (check out my <Link href="/pdfs/resume.pdf">resume</Link> for
+                details).
               </p>
               <p>
                 I develop applications that create positive impacts for people
                 around me, such as marketplace and chat application for Denison:{' '}
                 <Link href="https://deerx.vercel.app">DeerX</Link> using React
-                Native and Firebase. I&apos;m currently working for{' '}
+                Native and Firebase. I worked for{' '}
                 <Link href="https://www.dsw.com/">DSW</Link> as a Cloud
                 Application Engineer intern to develop and maintain the
                 company&apos;s content service.
@@ -119,6 +125,9 @@ export default function Banner() {
               </button>
             </div>
           </div>
+        </div>
+        <div className="mt-8">
+          <Image src={banner2} alt={config.homePage.banner.extraImageAlt} />
         </div>
       </div>
     </div>
