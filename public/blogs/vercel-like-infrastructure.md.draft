@@ -1,1 +1,3 @@
 # Vercel Like Infrastructure
+
+If you are Fullstack engineer that started as a Frontend engineer, you might have used Vercel (previous known as SH). Ever wonder how it does the thing where it connects to your github repo. When you push your code, it automatically builds your site and hosts it? In this blog we will attempt to mimic that behavior using AWS, controlled by Terraform and Serverless.

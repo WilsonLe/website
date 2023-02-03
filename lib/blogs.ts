@@ -18,9 +18,11 @@ const blogsDir = path.join(process.cwd(), 'public', 'blogs');
  */
 export async function getAllBlogIds() {
   const fileNames = await fs.readdir(blogsDir);
-  const postIds = fileNames.map((fileName) => ({
-    params: { id: fileName.replace(/\.md$/, '') },
-  }));
+  const postIds = fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => ({
+      params: { id: fileName.replace(/\.md$/, '') },
+    }));
 
   return postIds;
 }
