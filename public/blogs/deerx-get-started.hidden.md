@@ -37,7 +37,7 @@ A basic understanding of HTML, CSS, and Javascript is required to understand fur
 - [Tailwind tutorial example](https://www.youtube.com/watch?v=pfaSUYaSgRo) - this is optional, but highly recommend to understand how to DeerX is using Tailwind to style the app
 - [React in 100 Seconds](https://www.youtube.com/watch?v=Tn6-PIqc4UM)
 - [React for the Haters in 100 Seconds](https://www.youtube.com/watch?v=HyWYpM_S-2c) - this is optional, but you can use this video to confirm your understanding of React. See if you can understand jokes/references in the videos.
-- [How to use Typescript with React][https://www.youtube.com/watch?v=ydkqljhodio&t=332s]
+- [How to use Typescript with React](https://www.youtube.com/watch?v=ydkqljhodio&t=332s)
 - Core concepts of React, feel free to google, or write some example code, or ask me:
   - [10 React Hooks Explained // Plus Build your own from Scratch](https://www.youtube.com/watch?v=TNhaISOUy6Q)
   - [10 React Antipatterns to Avoid](https://www.youtube.com/watch?v=b0IZo2Aho9Y)
