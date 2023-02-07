@@ -19,16 +19,17 @@ Hey, if you are reading this, chances are you are interested in contributing to 
 
 # Programming Language and Technology Hierachy
 
-A basic understanding of HTML, CSS, and Javascript is required to understand further technology and how it fits in. In addition, a basic knowledge of Git is required to setup the development environment. It is recommended that you know some basic usage of the Terminal (which usually is running Bash). DeerX is developed mainly using Typescript, which is a superset of the Javascript programing language infused with static type check. You get learn more about those language using the following introduction videos. Watch the introduction videos in the order below, feel free to google any terminology in those video that you don't fully understand (feel free to ask me).
+A basic understanding of HTML, CSS, and Javascript is required to understand further technology and how it fits in. In addition, a basic knowledge of Git is required to setup the development environment. It is recommended that you know some basic usage of the Terminal (which usually is running Bash). DeerX is developed mainly using Typescript, which is a superset of the Javascript programing language infused with static type check. You will get to learn more about those language using the following introduction videos. Watch the introduction videos in the order below, feel free to google any terminology in those video that you don't fully understand (feel free to ask me).
 
 - [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE)
 - [Bash in 100 Seconds](https://www.youtube.com/watch?v=I4EWvMFj37g)
 - [HTML in 100 Seconds](https://www.youtube.com/watch?v=ok-plXXHlWw)
 - [CSS in 100 Seconds](https://www.youtube.com/watch?v=OEV8gMkCHXQ)
 - [JavaScript in 100 Seconds](https://www.youtube.com/watch?v=DHjqpvDnNGE)
-- [JavaScript for the Haters](https://www.youtube.com/watch?v=aXOChLn5ZdQ&t=24s) - this is optional, but you can use this video to confirm your understanding of Javascript. See if you can understand jokes/references in the videos.
-- [100+ JavaScript Concepts you Need to Know](https://www.youtube.com/watch?v=lkIFF4maKMU) - this is also optional, but you can use this video to confirm your understanding of Javascript. See if you can understand jokes/references in the videos.
-- Core concepts of Javascript, feel free to google, or write some example code, or ask me:
+- This part is optiona, but use these videos to confirm your understanding of Javascript:
+  - [JavaScript for the Haters](https://www.youtube.com/watch?v=aXOChLn5ZdQ&t=24s)
+  - [100+ JavaScript Concepts you Need to Know](https://www.youtube.com/watch?v=lkIFF4maKMU)
+- This part is optional, they are core concepts of Javascript but won't be necessary until you have begin writing code, feel free to google, or write some example code, or ask me:
   - [JavaScript Promise in 100 Seconds](https://www.youtube.com/watch?v=RvYYCGs45L4)
   - [Array Reduce in 100 seconds](https://www.youtube.com/watch?v=tVCYa_bnITg)
   - [Array Map in 100 Seconds](https://www.youtube.com/watch?v=DC471a9qrU4)
@@ -38,13 +39,10 @@ A basic understanding of HTML, CSS, and Javascript is required to understand fur
 - [React in 100 Seconds](https://www.youtube.com/watch?v=Tn6-PIqc4UM)
 - [React for the Haters in 100 Seconds](https://www.youtube.com/watch?v=HyWYpM_S-2c) - this is optional, but you can use this video to confirm your understanding of React. See if you can understand jokes/references in the videos.
 - [How to use Typescript with React](https://www.youtube.com/watch?v=ydkqljhodio&t=332s)
-- Core concepts of React, feel free to google, or write some example code, or ask me:
+- This part is optional, they are core concepts of React but won't be necessary until you have begin writing code, feel free to google, or write some example code, or ask me:
   - [10 React Hooks Explained // Plus Build your own from Scratch](https://www.youtube.com/watch?v=TNhaISOUy6Q)
   - [10 React Antipatterns to Avoid](https://www.youtube.com/watch?v=b0IZo2Aho9Y)
-- The following video is meant for mobile app developers:
-  - [React Native in 100 Seconds](https://www.youtube.com/watch?v=gvkqT_Uoahw)
-- The following video is meant for marketing web developers:
-  - [Next.js in 100 Seconds // Plus Full Beginner's Tutorial](https://www.youtube.com/watch?v=Sklc_fQBmcs)
+- [React Native in 100 Seconds](https://www.youtube.com/watch?v=gvkqT_Uoahw)
 
 # Tips
 
