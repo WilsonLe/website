@@ -43,6 +43,7 @@ export async function getSortedBlogHeadersData() {
       const fullPath = path.join(blogsDir, fileName);
 
       const fileContents = await fs.readFile(fullPath, 'utf8');
+
       const matterResult = matter(fileContents);
 
       // validate matter result
@@ -60,6 +61,7 @@ export async function getSortedBlogHeadersData() {
           description: matterResult.data.description,
           thumbnailURL: matterResult.data.thumbnailURL,
           thumbnailAlt: matterResult.data.thumbnailAlt,
+          hidden: fileName.endsWith('.hidden.md'),
         };
         return blogHeaderData;
       } else {
@@ -71,6 +73,7 @@ export async function getSortedBlogHeadersData() {
   const filteredAllPostsData: BlogHeaderData[] = allPostsData.filter(
     (x): x is BlogHeaderData => x !== null
   );
+
   // Sort posts by date
   return filteredAllPostsData.sort(
     (a, b) => parseInt(b.order) - parseInt(a.order)
@@ -110,6 +113,7 @@ export async function getBlogData(id: string) {
       thumbnailURL: matterResult.data.thumbnailURL,
       thumbnailAlt: matterResult.data.thumbnailAlt,
       htmlContent,
+      hidden: false,
     };
     return blogData;
   } else {

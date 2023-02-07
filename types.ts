@@ -18,6 +18,7 @@ export type BlogData = {
   thumbnailURL: string;
   thumbnailAlt: string;
   htmlContent: string;
+  hidden: boolean;
 };
 
 export type BlogHeaderData = Omit<BlogData, 'htmlContent'>;
