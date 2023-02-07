@@ -2,10 +2,10 @@ import { GetStaticProps, NextComponentType, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { BlogHeaderData } from '../../types';
+import { NoteHeaderData } from '../../types';
 
 interface Props {
-  noteHeaders: BlogHeaderData[];
+  noteHeaders: NoteHeaderData[];
 }
 
 const NoteList: NextPage<Props> = ({ noteHeaders }) => {

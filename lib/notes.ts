@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { BlogData, BlogHeaderData } from '../types';
+import { BlogData, BlogHeaderData, NoteHeaderData } from '../types';
 import { remark } from 'remark';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -51,7 +51,7 @@ export async function getSortedNoteHeadersData() {
         'thumbnailURL' in matterResult.data &&
         'thumbnailAlt' in matterResult.data
       ) {
-        const blogHeaderData: BlogHeaderData = {
+        const noteHeaderData: NoteHeaderData = {
           id,
           order: matterResult.data.order,
           title: matterResult.data.title,
@@ -59,7 +59,7 @@ export async function getSortedNoteHeadersData() {
           thumbnailURL: matterResult.data.thumbnailURL,
           thumbnailAlt: matterResult.data.thumbnailAlt,
         };
-        return blogHeaderData;
+        return noteHeaderData;
       } else {
         return null;
       }
@@ -108,6 +108,7 @@ export async function getNoteData(id: string) {
       thumbnailURL: matterResult.data.thumbnailURL,
       thumbnailAlt: matterResult.data.thumbnailAlt,
       htmlContent,
+      hidden: false,
     };
     return blogData;
   } else {
