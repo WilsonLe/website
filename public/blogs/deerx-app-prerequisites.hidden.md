@@ -1,9 +1,9 @@
 ---
-title: DeerX Get Started
+title: DeerX App Prerequisites
 order: 3
-thumbnailURL: /images/blogs/deerx-get-started/thumbnail.jpg
+thumbnailURL: /images/blogs/deerx-app-prerequisites/thumbnail.jpg
 thumbnailAlt: Logo of DeerX
-description: Prerequisites for getting started on DeerX
+description: Prerequisites for getting started on DeerX's App team
 ---
 
 # Table of content
@@ -19,7 +19,7 @@ Hey, if you are reading this, chances are you are interested in contributing to 
 
 # Programming Language and Technology Hierachy
 
-A basic understanding of HTML, CSS, and Javascript is required to understand further technology and how it fits in. In addition, a basic knowledge of Git is required to setup the development environment. It is recommended that you know some basic usage of the Terminal (which usually is running Bash). DeerX is developed mainly using Typescript, which is a superset of the Javascript programing language infused with static type check. You will get to learn more about those language using the following introduction videos. Watch the introduction videos in the order below, feel free to google any terminology in those video that you don't fully understand (feel free to ask me).
+A basic understanding of HTML, CSS, and Javascript is required to understand more advanced technology and how it fits in. In addition, a basic knowledge of Git is required to setup the development environment. It is recommended that you know some basic usage of the Terminal (which usually is running Bash). DeerX is developed mainly using Typescript, which is a superset of the Javascript programing language infused with static type check. You will get to learn more about those language using the following introduction videos. Watch the introduction videos in the order below, feel free to google any terminology in those video that you don't fully understand (feel free to ask me).
 
 - [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE)
 - [Bash in 100 Seconds](https://www.youtube.com/watch?v=I4EWvMFj37g)
