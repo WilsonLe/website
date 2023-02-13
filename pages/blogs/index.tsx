@@ -8,31 +8,33 @@ import { getSortedBlogHeadersData } from '../../lib/blogs';
 import { BlogHeaderData } from '../../types';
 
 interface Props {
-  blogHeaders: BlogHeaderData[];
+	blogHeaders: BlogHeaderData[];
 }
 
 const getStaticProps: GetStaticProps = async () => {
-  const blogHeaders: BlogHeaderData[] = await getSortedBlogHeadersData();
-  return {
-    props: { blogHeaders },
-  };
+	const blogHeaders: BlogHeaderData[] = (
+		await getSortedBlogHeadersData()
+	).filter((blogHeader) => blogHeader.hidden === false);
+	return {
+		props: { blogHeaders },
+	};
 };
 
 const Blogs: NextPage<Props> = ({ blogHeaders }) => {
-  return (
-    <>
-      <nav>
-        <Nav />
-      </nav>
-      <main>
-        <BlogBanner />
-        <BlogList blogHeaders={blogHeaders} />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </>
-  );
+	return (
+		<>
+			<nav>
+				<Nav />
+			</nav>
+			<main>
+				<BlogBanner />
+				<BlogList blogHeaders={blogHeaders} />
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</>
+	);
 };
 export { getStaticProps };
 export default Blogs;

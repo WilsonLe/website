@@ -15,7 +15,9 @@ interface Props {
 }
 
 const getStaticProps: GetStaticProps = async () => {
-	const blogHeaders: BlogHeaderData[] = await getSortedBlogHeadersData();
+	const blogHeaders: BlogHeaderData[] = (
+		await getSortedBlogHeadersData()
+	).filter((blogHeader) => blogHeader.hidden === false);
 	if (blogHeaders.length > 3) {
 		blogHeaders.splice(3);
 	}
