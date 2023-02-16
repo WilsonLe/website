@@ -1,7 +1,7 @@
 ---
 title: DeerX Backend Prerequisites
 order: 3
-thumbnailURL: /images/blogs/deerx-backend-prerequisites/thumbnail.jpg
+thumbnailURL: /images/blogs/deerx-backend-prerequisites/deerx.jpg
 thumbnailAlt: Logo of DeerX
 description: Prerequisites for getting started on DeerX's Backend team
 ---
@@ -9,13 +9,8 @@ description: Prerequisites for getting started on DeerX's Backend team
 # Table of content
 
 - [Table of content](#table-of-content)
-- [Hi there!](#hi-there)
 - [Programming Language and Technology Hierachy](#programming-language-and-technology-hierachy)
 - [Tips](#tips)
-
-# Hi there!
-
-Hey, if you are reading this, chances are you are interested in contributing to DeerX and have minimal background in Computer Science. Don't worry, this documentation aims to provide you with certain programming languages and technology that we use to develop the application. We hope that you have fun with the learning and development process. In addition to being Denison's very own secondary marketplace, DeerX is also a coding club for people looking to learn more about web/app developement.
 
 # Programming Language and Technology Hierachy
 
